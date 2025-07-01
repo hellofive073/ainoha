@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ainhoa 💜</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Extra mobile tweaks */
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #d3a4f7, #e9c9ff);
+    }
+    .carta {
+      width: 95vw;
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 24px 12px;
+    }
+    #sorpresa {
+      font-size: 1.3em;
+      color: #cc0088;
+      font-weight: bold;
+      margin-top: 20px;
+      display: none;
+      transition: opacity 0.5s;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      p { font-size: 1.1em; }
+      button { font-size: 1em; padding: 14px; width: 100%; }
+      #sorpresa { font-size: 1.1em; }
+    }
+  </style>
+</head>
+<body>
+  <script src="index.js"></script>
+  <div class="carta">
+    <h1>Para mi querida Ainhoa 💜</h1>
+    <p id="mensaje">
+      Eres la luz que ilumina mis días y el amor que llena mi corazón.<br>
+      Gracias por ser tú. Esta página es solo para recordarte lo especial que eres.
+    </p>
+    <button onclick="mostrarSorpresa()">Haz clic aquí 💌</button>
+    <div id="sorpresa">Te amo más de lo que las palabras pueden decir 💖</div>
+  </div>
+  <script>
+    function mostrarSorpresa() {
+      const sorpresa = document.getElementById('sorpresa');
+      sorpresa.style.display = 'block';
+      sorpresa.style.opacity = 1;
+      // Después de 5 segundos, mostrar "I love you"
+      setTimeout(() => {
+        const iLoveYou = document.createElement('div');
+        iLoveYou.textContent = 'I love you 💖';
+        iLoveYou.style.marginTop = '18px';
+        iLoveYou.style.fontSize = '1.5em';
+        iLoveYou.style.color = '#e60073';
+        iLoveYou.style.fontWeight = 'bold';
+        iLoveYou.style.opacity = 0;
+        iLoveYou.style.transition = 'opacity 1s';
+        sorpresa.appendChild(iLoveYou);
+        setTimeout(() => {
+          iLoveYou.style.opacity = 1;
+        }, 100);
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

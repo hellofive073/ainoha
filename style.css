@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to right, #d3a4f7, #e9c9ff);
+  color: #4b007d;
+  overflow: hidden;
+}
+
+.carta {
+  background-color: #ffffffdd;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 600px;
+  margin: 100px auto;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #800080;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.7;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #b56bfa;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1em;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #a04ee3;
+}
+
+#sorpresa {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #cc0088;
+  font-weight: bold;
+  display: none;
+}
+
+/* Corazones flotando */
+.corazon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: flotar 6s linear infinite;
+  opacity: 0.6;
+}
+
+.corazon::before,
+.corazon::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.corazon::before {
+  top: -10px;
+  left: 0;
+}
+
+.corazon::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .carta {
+    margin: 60px 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1em;
+  }
+
+  #sorpresa {
+    font-size: 1.1em;
+  }
+}
